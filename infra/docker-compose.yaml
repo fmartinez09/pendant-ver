@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  master:
+    image: chrislusf/seaweedfs
+    command: "weed master -ip=master -port=9333"
+    ports:
+      - "9333:9333"
+
+  volume:
+    image: chrislusf/seaweedfs
+    command: "weed volume -max=5 -ip=volume -mserver=master:9333 -port=8080 -dir=/data"
+    volumes:
+      - seaweed_data:/data
+    ports:
+      - "8080:8080"
+
+  fuse:
+    image: chrislusf/seaweedfs
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+    command: >
+      sh -c "
+        mkdir -p /mnt/seaweed &&
+        weed mount -dir=/mnt/seaweed -filer=master:8888
+      "
+    volumes:
+      - seaweed_mount:/mnt/seaweed
+    depends_on:
+      - master
+      - volume
+
+volumes:
+  seaweed_data:
+  seaweed_mount:

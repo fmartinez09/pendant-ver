@@ -1,0 +1,2 @@
+mp.messaging.outgoing.blob-uploaded.connector: pulsar
+mp.messaging.outgoing.blob-uploaded.topic: persistent://public/default/blob-uploaded
