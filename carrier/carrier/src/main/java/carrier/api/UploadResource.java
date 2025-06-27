@@ -1,9 +1,11 @@
 package carrier.api;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 import jakarta.inject.Inject;
 import carrier.service.SeaweedService;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 @Path("/upload")
 public class UploadResource {

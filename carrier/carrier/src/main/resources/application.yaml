@@ -1,2 +1,13 @@
+seaweedfs:
+  path: /mnt/seaweed/chunks
+
+foundationdb:
+  cluster_file: /etc/foundationdb/fdb.cluster
+
 mp.messaging.outgoing.blob-uploaded.connector: pulsar
 mp.messaging.outgoing.blob-uploaded.topic: persistent://public/default/blob-uploaded
+mp.messaging.outgoing.blob-uploaded.serviceUrl: pulsar://localhost:6650
+
+mp.messaging.outgoing.blob-committed.connector: pulsar
+mp.messaging.outgoing.blob-committed.topic: persistent://public/default/blob-committed
+mp.messaging.outgoing.blob-committed.serviceUrl: pulsar://localhost:6650

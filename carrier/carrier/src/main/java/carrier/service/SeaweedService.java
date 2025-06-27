@@ -18,7 +18,7 @@ public class SeaweedService {
                 fos.write(data);
                 fos.flush();
                 FileDescriptor fd = fos.getFD();
-                fd.sync();  // fsync real
+                fd.sync();  // fsync real papito
             }
             return true;
         } catch (IOException e) {

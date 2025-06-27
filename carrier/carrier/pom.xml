@@ -67,9 +67,9 @@
             <version>3.24.1</version>
         </dependency>
         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-reactive-routes</artifactId>
-            <version>3.24.1</version>
+            <groupId>org.foundationdb</groupId>
+            <artifactId>fdb-java</artifactId>
+            <version>7.4.3</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
